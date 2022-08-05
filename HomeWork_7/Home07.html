@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 7</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <style>
+       #background1{
+        z-index: 1;
+        height: 580px;
+        width: 740px;
+        position: absolute;
+        margin-top: 25px;
+        margin-left: 10px
+
+       }
+       #background2{
+        z-index: 0;
+        height: 580px;
+        width: 740px;
+        position: absolute;
+        margin-top: 25px;
+        margin-left: 10px 
+       }
+
+       #logo {
+            z-index: 2;
+            height: 240px;
+            width: 320px;
+            position: absolute;
+            margin-top: 80px;
+            margin-left: 210px
+        }
+
+        #item1 {
+            z-index: 2;
+            height: 240px;
+            width: 320px;
+            position: absolute;
+            margin-top: 280px;
+            margin-left: 100px
+        }
+
+        #item2 {
+            z-index: 2;
+            height: 240px;
+            width: 320px;
+            position: absolute;
+            margin-top: 300px;
+            margin-left: 320px
+        }
+        #buttons{
+            margin:30px;
+        }
+    </style>
+    <script language="JavaScript">
+
+        $(function(){
+
+            var Hidden = true;
+
+            $("#item1").attr("hidden",true);
+            $("#item2").attr("hidden",true);
+
+            $("#btn_bg1").click(
+            function () {
+                $("#background2").hide("scale", {percent: 0}, 1700,);
+                $("#background1").show("slide", 1700);
+            });
+
+            $("#btn_bg2").click(
+            function () {
+                $("#background1").hide("scale", 1700);
+                $("#background2").show("slide", 1700);
+            });
+
+            $("#btn_item1").click(
+            function () {
+                $("#item1").show("bounce", "easeOutBounce", 1500);
+            });
+
+            $("#btn_del_item1").click(
+            function () {
+                $("#item1").hide("scale", "easeOutBounce", 1500);
+            });
+
+            $("#btn_item2").click(
+            function () {
+                $("#item2").show("slide", 1500);
+            });
+
+            $("#btn_del_item2").click(
+            function () {
+                $("#item2").hide("scale", "easeOutBounce", 1500);
+            });
+
+            $("#btn_del_items").click(
+            function () {
+                $("#item1").hide("scale", "easeOutBounce", 1500);
+                $("#item2").hide("scale", 1500);
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+    <img id="logo" src=".\Images\logo.png">
+    <img id="background1" src=".\Images\doom1.jpg">
+    <img id="background2" src=".\Images\doom2.jpg">
+    <img id="item1" src=".\Images\demon1.png">
+    <img id="item2" src=".\Images\demon2.png">
+
+    <div id="buttons">
+        <input type="button" id="btn_bg1" value="First background"/>
+        <input type="button" id="btn_bg2" value="Second background"/>
+        <input type="button" id="btn_item1" value="Demon 1"/>
+        <input type="button" id="btn_del_item1" value="Kill demon 1"/>
+        <input type="button" id="btn_item2" value="Demon 2"/>
+        <input type="button" id="btn_del_item2" value="Kill demon 2"/>
+        <input type="button" id="btn_del_items" value="Kill them both !!!"/>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performing Simple Math</title>
+    <script language="Javascript">
+        function add(){
+            var value1 = new Number(document.getElementById("Value1").value);
+            var value2 = new Number(document.getElementById("Value2").value);
+            var userGuess = new Number(document.getElementById("Result").value);
+            
+            if(userGuess==value1+value2){
+                alert("Right answer!");
+            }else{
+                alert("Sorry, wrong answer!");
+                document.getElementById("Result").setAttribute("Value", "");
+            }
+            
+        }
+        function subtract(){
+            var value1 = new Number(document.getElementById("Value1").value);
+            var value2 = new Number(document.getElementById("Value2").value);
+            var userGuess = new Number(document.getElementById("Result").value);
+            
+            if(userGuess==value1-value2){
+                alert("Right answer!");
+            }else{
+                alert("Sorry, wrong answer!");
+                document.getElementById("Result").setAttribute("Value", "");
+            }
+           
+        }
+        function multiply(){
+            var value1 = new Number(document.getElementById("Value1").value);
+            var value2 = new Number(document.getElementById("Value2").value);
+            var userGuess = new Number(document.getElementById("Result").value);
+            
+            if(userGuess==value1*value2){
+                alert("Right answer!");
+            }else{
+                alert("Sorry, wrong answer!");
+                document.getElementById("Result").setAttribute("Value", "");
+            }
+        }
+        function divide(){
+            var value1 = new Number(document.getElementById("Value1").value);
+            var value2 = new Number(document.getElementById("Value2").value);
+            var userGuess = new Number(document.getElementById("Result").value);
+            
+            if(userGuess==value1/value2){
+                alert("Right answer!");
+            }else{
+                alert("Sorry, wrong answer!");
+                document.getElementById("Result").setAttribute("Value", "");
+            }
+        }
+       
+    </script>
+</head>
+<body>
+    <div align="center">
+    <h1>Performing Simple Math</h1>
+    <p>
+        Value 1:
+        <input type="text" id="Value1" value="">
+    </p>
+    <p>
+        Value 2:
+        <input type="text" id="Value2" value="">
+    </p>
+    <p>
+        Result:
+        <input type="text" id="Result" value="">
+    </p>
+
+    <input type="button" value="+" onclick="add()">
+    <input type="button" value="-" onclick="subtract()">
+    <input type="button" value="*" onclick="multiply()">
+    <input type="button" value="/" onclick="divide()">
+    </div>
+</body>
+</html>

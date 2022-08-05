@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Slideshow</title>
+
+    <style>
+
+        #p1{
+           text-align: center;
+           font-size: 30px; 
+        }
+
+        .btn{
+            position:relative;
+            left:200px;
+            height: 80px;
+            width: 300px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        function changeText(){
+            document.getElementById("p1").innerHTML="See on uus tekst!";
+            document.getElementById("p1").style.color="black";
+            alert("Aitäh, tekst muutus teistsuguseks!");
+        }
+
+        function changeText1(){
+            document.getElementById("p1").style.color="red";
+            document.getElementById("p1").style.backgroundColor="black";
+            document.getElementById("p1").style.fontFamily="Arial Black";
+            alert("Aitäh, muutsid teksti punaseks!");
+        }
+
+        function reverseString(input){
+            var splitString = input.split("");
+            var reverseArray = splitString.reverse();
+            var joinArray = reverseArray.join("");
+            return joinArray;
+        }
+
+        function changeText2(){
+            var originalText = document.getElementById("p1").innerHTML;
+            document.getElementById("p1").innerHTML = reverseString(originalText);
+            alert("Oi oi, tekst läks valet pidi!");
+        }
+
+        function changeText3(){
+            var originalText = document.getElementById("p1").innerHTML;
+            document.getElementById("p1").innerHTML = originalText.toUpperCase();
+            alert("Kõik tähed muutuvad suureks!");
+        }
+
+        function changeBackground(){
+            var randomNumber = Math.floor(Math.random() * 5);
+            switch(randomNumber){
+                case 0:
+                    document.body.bgColor = "Red";
+                    alert("Taust muutub punaseks");
+                    break;
+                case 1:
+                    document.body.bgColor = "Blue";
+                    alert("Taust muutub siniseks");
+                    break;
+                case 2:
+                    document.body.bgColor = "Green";
+                    alert("Taust muutub roheliseks");
+                    break;
+                case 3:
+                    document.body.bgColor = "Yellow";
+                    alert("Taust muutub kollaseks");
+                    break;
+                case 4:
+                    document.body.bgColor = "Orange";
+                    alert("Taust muutub oranziks");
+                    break;
+                case 5:
+                    document.body.bgColor = "Cyan";
+                    alert("Taust muutub tsüaaniks");
+                    break;
+                default:
+                    document.body.bgColor = "White";
+            }
+        }
+
+        function changeTextColor(){
+            var randomNumber = Math.floor(Math.random() * 5);
+            switch(randomNumber){
+                case 0:
+                    document.getElementById("p1").style.color="red";
+                    alert("Tekst muutub punaseks");
+                    break;
+                case 1:
+                    document.getElementById("p1").style.color="blue";
+                    alert("Tekst muutub siniseks");
+                    break;
+                case 2:
+                    document.getElementById("p1").style.color="green";
+                    alert("Tekst muutub roheliseks");
+                    break;
+                case 3:
+                    document.getElementById("p1").style.color="yellow";
+                    alert("Tekst muutub kollaseks");
+                    break;
+                case 4:
+                    document.getElementById("p1").style.color="orange";
+                    alert("Tekst muutub oranziks");
+                    break;
+                case 5:
+                    document.getElementById("p1").style.color="cyan";
+                    alert("Tekst muutub tsüaaniks");
+                    break;
+                default:
+                    document.getElementById("p1").style.color="black";
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <p id="p1">Tere Jälle!</p>
+    <input class="btn" type="button" onclick="changeText()" value="Teksti muutmiseks kliki siia">
+    <input class="btn" type="button" onclick="changeBackground()" value="Nupule klikkides muudame tausta värvi">
+    <input class="btn" type="button" onclick="changeTextColor()" value="Teksti värvi muutmiseks kliki siia">
+    <input class="btn" type="button" onclick="changeText2()" value="Tekst läheb tagurpidi">
+    <input class="btn" type="button" onclick="changeText3()" value="Kõik tähed tekstis suureks">
+</body>
+</html>
